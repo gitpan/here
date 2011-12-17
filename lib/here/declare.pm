@@ -111,7 +111,7 @@ package here::declare;
         }
     }
 
-    our $VERSION = '0.02';
+    our $VERSION = '0.03';
 
 
 =head1 NAME
@@ -120,7 +120,7 @@ here::declare - easily declare compile time variables
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
@@ -186,7 +186,7 @@ is unable to pass arguments that can not easily be written in a string.
 
 =back
 
-=head2 list of name/value pairs:
+=head2 list of name/value pairs
 
 =over 4
 
@@ -200,7 +200,7 @@ if the name is a C< $scalar > then the corresponding value will be copied into
 the newly created variable at compile time.  it is safe to pass any type of
 scalar as a value, and it will not be stringified.  C< bareword > and
 C< -bareword > names will be interpreted as C< $bareword > which can cut down
-on the number of quotes you need to write (C< use my say => sub {...}; >)
+on the number of quotes you need to write (C<< use my say => sub {...}; >>)
 
 if the name is an C< @array > or C< %hash > the corresponding values must be
 C< ARRAY > or C< HASH > references, which will be dereferenced and copied into
@@ -217,7 +217,7 @@ declarator, which gets around needing to serialize the values.
 
 =back
 
-=head2 C<< [array of names] => list or array of values >>:
+=head2 [array of names] => list or array of values
 
 =over 4
 

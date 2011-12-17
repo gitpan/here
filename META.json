@@ -29,7 +29,7 @@
    "provides" : {
       "here" : {
          "file" : "lib/here.pm",
-         "version" : "0.02"
+         "version" : "0.03"
       },
       "here::debug" : {
          "file" : "lib/here/debug.pm",
@@ -37,7 +37,7 @@
       },
       "here::declare" : {
          "file" : "lib/here/declare.pm",
-         "version" : "0.02"
+         "version" : "0.03"
       },
       "here::install" : {
          "file" : "lib/here/install.pm",
@@ -50,5 +50,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }

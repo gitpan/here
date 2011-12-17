@@ -43,7 +43,7 @@ package here;
         else {croak "here::fetch: invalid key '$_[0]'"}
     }
 
-    our $VERSION = '0.02';
+    our $VERSION = '0.03';
 
 
 =head1 NAME
@@ -52,7 +52,7 @@ here - insert generated source here
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
