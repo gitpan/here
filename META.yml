@@ -17,16 +17,16 @@ name: here
 provides:
   here:
     file: lib/here.pm
-    version: 0.01
+    version: 0.02
   here::debug:
     file: lib/here/debug.pm
     version: 0
   here::declare:
     file: lib/here/declare.pm
-    version: 0.01
+    version: 0.02
   here::install:
     file: lib/here/install.pm
     version: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.01
+version: 0.02

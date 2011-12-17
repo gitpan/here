@@ -23,7 +23,7 @@ package here::install;
             push @pseudo, $name;
 
             no strict 'refs';
-            %{$name.'::'} and croak "package '$name' not empty";
+            defined &{$name.'::import'} and croak "package '$name' not empty";
             *{$name.'::import'} = sub {
                 use strict;
                 shift;

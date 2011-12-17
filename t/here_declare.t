@@ -105,26 +105,37 @@ is eval '$ABC', 123, t;
     is eval '$baz{b}', 'az1', t;
 }
 
+
 no here::declare;
 
-t 'no here::declare'; {
-    for (qw (my our const const2)) {
-        ok !$INC{"$_.pm"}, t;
-        no strict 'refs';
-        ok !$_->can('import'), t
+BEGIN {
+    t 'no here::declare'; {
+        for (qw (my our const const2)) {
+            ok !$INC{"$_.pm"}, t;
+            no strict 'refs';
+            ok !$_->can('import'), t
+        }
     }
 }
 
 t 'use again'; {
     use here::declare;
-    use my qw(x 2);
-    is eval '$x', 2, t;
+    use my qw(x 222);
+    is eval '$x', 222, t;
 }
 
-t 'end of scope'; {
-    for (qw (my our const const2)) {
-        ok !$INC{"$_.pm"}, t;
-        no strict 'refs';
-        ok !$_->can('import'), t
+SKIP:{
+    unless ('B::Hooks::EndOfScope'->can('on_scope_end')) {
+        my $msg = 'B::Hooks::EndOfScope required to test scope end';
+        diag $msg;
+        skip $msg, 8;
+    }
+
+    t 'end of scope'; {
+        for (qw (my our const const2)) {
+            ok !$INC{"$_.pm"}, t;
+            no strict 'refs';
+            ok !$_->can('import'), t
+        }
     }
 }

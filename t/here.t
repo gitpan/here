@@ -51,7 +51,9 @@ use here::install myok => \&myok;
 
 no here::install 'myok';
 
-t 'no here::install'; {
-    ok !$INC{'myok.pm'}, t;
-    ok !defined &myok::import, t;
+BEGIN {
+    t 'no here::install'; {
+        ok !$INC{'myok.pm'}, t;
+        ok !defined &myok::import, t;
+    }
 }

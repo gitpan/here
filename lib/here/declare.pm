@@ -111,7 +111,7 @@ package here::declare;
         }
     }
 
-    our $VERSION = '0.01';
+    our $VERSION = '0.02';
 
 
 =head1 NAME
@@ -120,7 +120,7 @@ here::declare - easily declare compile time variables
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -217,7 +217,7 @@ declarator, which gets around needing to serialize the values.
 
 =back
 
-=head2 C< [array of names] => list or array of values >:
+=head2 C<< [array of names] => list or array of values >>:
 
 =over 4
 
